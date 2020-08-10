@@ -47,3 +47,33 @@ plt.show()
 m.plot_components(predictions)
 plt.show()
 
+"""# **Candlestick Chart**
+
+Candlestick Chart is a powerful way to visualize the trends and changes in the stock market and other financial instruments. Most people use a Candlestick chart to visualize the trading patterns. This article will take you through how you can create an interactive Candlestick chart using Python and Plotly.
+
+To visualize our data in the form of Candlesticks, we must be having data that comprises open price, high price, low price, and close price. It is mainly used in financial analysis, so I will use the stock market data of Google of this year starting from January till 8 August.
+
+# **Interactive Candlestick Chart with Python**
+Japanese commodity Traders created this technique to build this type of chart, and initially, they were known as the Japanese Candlesticks. I will not go in that much detail because our end goal is to visualize this chart using Python.
+
+I will scrape the stock market data of Google from yahoo finance using the pandas_datareader package. If you don’t want to scrape the data and want to use a CSV file, you can also download it from yahoo finance. Now let’s import the necessary packages we need for this task:
+"""
+
+import plotly.graph_objects as go
+import pandas_datareader as web
+
+df = web.DataReader('GOOG', data_source='yahoo', start='2020-01-01', end='2020-08-08')
+print(df.head())
+
+"""As the data is collected from yahoo finance, there is no possibility of missing figures and any need for data cleaning. So, as we are trying to build an interactive chart, I will use the Plotly package for this task, so I will now prepare the data so that it could be quickly baked into a Candlestick Chart:"""
+
+fig = go.Figure(data=[go.Candlestick(x=df.index,
+open=df['Open'],
+high=df['High'],
+low=df['Low'],
+close=df['Close'],
+increasing_line_color='red',
+decreasing_line_color = 'blue'
+)])
+fig.show()
+
