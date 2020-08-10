@@ -12,3 +12,6 @@ I will use the latest dataset that I just downloaded from yahoo finance. If you 
 If you want to practice this on the latest dataset when you are reading this article, then you can download the latest one from the yahoo finance. If you find any problem in downloading the latest dataset you can mention in the comments section below; I will help you out with that.
 
 To predict stock prices using the Facebook Prophet model, you have to install a package named fbprophet, which can be easily installed using the pip command- pip install fbprophet. I hope you have installed this package and now let’s move further by importing the necessary packages we need for this task:
+
+# Interactive Candlestick Chart 
+Candelstick chart is a powerful way to visualize the trends and changes in the stock market and other financial instruments. Most people use a Candlestick chart to visualize the trading patterns. This article will take you through how you can create an interactive Candlestick chart using Python and Plotly.To visualize our data in the form of Candlesticks, we must be having data that comprises open price, high price, low price, and close price. It is mainly used in financial analysis, so I will use the stock market data of Google of this year starting from January till 8 August.
